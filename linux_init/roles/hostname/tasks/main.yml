@@ -1,4 +1,8 @@
 ---
+- name: Set a fact using a group_vars variable
+  set_fact:
+    fact_name: "{{ environment }}"
+
 - name: Set Hostname 
   hostname:
     name: "{{ inventory_hostname }}"
