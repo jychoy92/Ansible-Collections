@@ -1,0 +1,19 @@
+---
+- name: Ansible "set_fact" module to define my_env
+  set_fact:
+    my_env: "lab"
+  when: ansible_hostname.find("lab") != -1
+
+- name: Ansible "set_fact" module to define role
+  set_fact:
+    my_role: "jumphost"
+  when: ansible_hostname.find("jh") != -1
+
+- name: Ansible "set_fact" module to define role
+  set_fact:
+    my_role: "server"
+  when: ansible_hostname.find("jh") = -1
+
+- name: Print the environment and role
+  debug:
+    msg: "My environment is {{ my_env }} and my role is {{ my_role }}"
