@@ -1,0 +1,15 @@
+---
+packages_install: 
+# <package_name>-<version>-<release>
+# Version and Release are optional
+  - htop-3.2.1
+  - vim
+  - tree-1.8.0-10.el9
+  - net-tools
+
+packages_remove:
+  - atop
+
+enable_services:
+
+disable_services:

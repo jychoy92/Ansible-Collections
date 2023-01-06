@@ -1,0 +1,6 @@
+---
+- name: Ansible "copy" module
+  copy:
+    src: test.txt
+    dest: "{{ ansible_env.HOME }}/ansible-results/"
+    backup: yes

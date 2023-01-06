@@ -1,0 +1,12 @@
+---
+# you can use adhoc module "setup" to show the facts
+# ansible HOST -m setup
+# ansible HOST -m setup -a "filter-ansible_all_ipv4_addresses"
+
+# - name: show all facts
+#   debug:
+#     var: ansible_facts
+
+- name: show specific facts, e.g. ipv4 address
+  debug:
+    var: ansible_default_ipv4.address

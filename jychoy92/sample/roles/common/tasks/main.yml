@@ -1,0 +1,7 @@
+---
+# tasks file for common
+- include_tasks: copy.yml
+- include_tasks: template.yml
+- include_tasks: ansible_facts.yml
+- include_tasks: block_register_degug.yml
+- include_tasks: withitems.yml

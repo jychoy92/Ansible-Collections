@@ -1,0 +1,18 @@
+---
+- name: Demo 1 - "with_items" within task, these items will not be added to entire play
+  debug:
+    msg: Printing number {{ item }}
+  with_items:
+    - ONE
+    - TWO
+    - THREE
+
+- name: Demo 2 - "with_items" using role vars
+  debug:
+    msg: I have been to {{ item }}
+  with_items: "{{ var_country_name}}"
+
+- name: Demo 3 - "with_items" using role vars list of dictionaries
+  debug:
+    msg: My name is {{ item.name }}, I'm {{ item.age }} years old. I am a {{ item.gender }}.
+  with_items: "{{ var_persons }}"

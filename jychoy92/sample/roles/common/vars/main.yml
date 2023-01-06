@@ -1,0 +1,18 @@
+---
+# vars file for common
+var_country_name:
+  - United States
+  - United Kingdom
+  - Singapore
+  - Canada
+
+var_persons:
+  - name: Alexander
+    age: 28
+    gender: boy
+  - name: Leia
+    age: 23
+    gender: girl
+  - name: Brandon
+    age: 31
+    gender: boy

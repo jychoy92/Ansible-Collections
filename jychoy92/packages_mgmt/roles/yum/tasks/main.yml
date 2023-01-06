@@ -1,0 +1,35 @@
+---
+- name: Install Extra Packages for Enterprise Linux (EPEL) repository
+  yum:
+    name: epel-release
+    state: present
+
+- name: Install Packages
+  yum:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ packages_install }}"
+  when: packages_install is defined and packages_install is not none and packages_install|length > 0
+
+- name: Remove Packages
+  yum:
+    name: "{{ item }}"
+    state: absent
+  with_items: "{{ packages_remove }}"
+  when: packages_remove is defined and packages_remove is not none and packages_remove|length > 0
+
+- name: Enable Services 
+  systemd:
+    name: "{{ item }}"
+    enabled: yes
+    masked: no
+  with_items: "{{ enable_services }}"
+  when: enable_services is defined and enable_services is not none and enable_services|length > 0
+
+- name: Disable Services
+  systemd:
+    name: "{{ item }}"
+    enabled: no
+  with_items: "{{ disable_services }}"
+  ignore_errors: yes
+  when: disable_services is defined and disable_services is not none and disable_services|length > 0
