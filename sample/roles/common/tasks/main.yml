@@ -6,5 +6,3 @@
 - include_tasks: block_register_degug.yml
 - include_tasks: withitems.yml
 - include_tasks: set_fact.yml
-  tags:
-    - set_fact
