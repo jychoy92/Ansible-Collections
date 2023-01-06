@@ -3,6 +3,10 @@
   set_fact:
     fact_name: "{{ environment }}"
 
+- name: Display the value of myvar
+  debug:
+    msg: "The value of myvar is {{ environment }}"
+
 - name: Set Hostname 
   hostname:
     name: "{{ inventory_hostname }}"
