@@ -12,7 +12,7 @@
 - name: Ansible "set_fact" module to define role
   set_fact:
     my_role: "server"
-  when: ansible_hostname.find("jh") = -1
+  when: ansible_hostname not in "jh"
 
 - name: Print the environment and role
   debug:
