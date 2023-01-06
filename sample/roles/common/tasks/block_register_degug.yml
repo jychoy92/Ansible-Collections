@@ -3,7 +3,7 @@
   block:
     ### Block - Start ###
     - name: Block 1 - Shell, Register and Task handlers
-      shell: cat /etc/hostname  | grep {{ ansible_host }}
+      shell: cat /etc/hostname  | grep {{ ansible_hostname }}
       changed_when: false   # Even the change is "true" it will show status "OK" instead
       ignore_errors: true   # Ignore the error when it failed
       register: output_hostname
