@@ -5,6 +5,8 @@
     apply:
       tags:
         - tag-copy
+    tags:
+    - always
 - include_tasks: template.yml
 - include_tasks: ansible_facts.yml
 - include_tasks: block_register_degug.yml
