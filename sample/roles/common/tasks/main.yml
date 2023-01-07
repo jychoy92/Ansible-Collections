@@ -5,7 +5,7 @@
     apply:
       tags:
         - tag-copy
-    tags:
+  tags:
     - always
 - include_tasks: template.yml
 - include_tasks: ansible_facts.yml
