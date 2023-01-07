@@ -3,12 +3,13 @@
   template:
     src: hostinfo.j2
     dest: "{{ ansible_env.HOME }}/ansible-results/hostinfo.txt"
-  register: output_template
+  register: output_template_module
 
-- name: print the template output
-  shell: "cat {{ output_template.path }}"
-  register: output_template2
+- name: capture template the template output
+  shell: "cat {{ output_template_module.path }}"
+  register: output_template_info
   changed_when: false
 
-- debug:
-    msg: "{{ output_template2.stdout }}"
+- name: echo template contents
+  debug:
+    msg: "{{ output_template_info.stdout }}"
