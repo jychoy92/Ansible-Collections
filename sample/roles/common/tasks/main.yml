@@ -18,7 +18,7 @@
   tags:
     - module-block
     - module-register
-    - module-degug
+    - module-debug
 
 - import_tasks: withitems.yml
   tags:
