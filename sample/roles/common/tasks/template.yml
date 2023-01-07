@@ -5,5 +5,5 @@
     dest: "{{ ansible_env.HOME }}/ansible-results/hostinfo.txt"
   register: template-output
 
-  debug:
+- debug:
     var: template-output
