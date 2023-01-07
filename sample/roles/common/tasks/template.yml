@@ -5,11 +5,11 @@
     dest: "{{ ansible_env.HOME }}/ansible-results/hostinfo.txt"
   register: output_template_module
 
-- name: capture template output
+- name: capture template contents
   shell: "cat {{ output_template_module.path }}"
-  register: output_template_info
+  register: output_template_contents
   changed_when: false
 
 - name: echo template contents
   debug:
-    msg: "{{ output_template_info.stdout }}"
+    msg: "{{ output_template_contents.stdout }}"
