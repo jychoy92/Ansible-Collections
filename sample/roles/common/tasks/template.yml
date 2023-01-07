@@ -3,3 +3,7 @@
   template:
     src: hostinfo.j2
     dest: "{{ ansible_env.HOME }}/ansible-results/hostinfo.txt"
+  register: template-output
+
+  debug:
+    var: template-output

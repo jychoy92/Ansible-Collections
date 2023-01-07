@@ -22,7 +22,7 @@
 
 - import_tasks: withitems.yml
   tags:
-    - module-withitems
+    - module-with_items
 
 - import_tasks: set_fact.yml
   tags:
