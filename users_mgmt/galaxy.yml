@@ -43,10 +43,10 @@ tags: []
 dependencies: {}
 
 # The URL of the originating SCM repository
-repository: https://github.com/jychoy92/Ansible-Collections/tree/main/jychoy92/users_mgmt
+repository: https://github.com/jychoy92/Ansible-Collections/tree/main/users_mgmt
 
 # The URL to any online docs
-documentation: https://github.com/jychoy92/Ansible-Collections/tree/main/jychoy92/users_mgmt/docs
+documentation: https://github.com/jychoy92/Ansible-Collections/tree/main/users_mgmt/docs
 
 # The URL to the homepage of the collection/project
 homepage: https://github.com/jychoy92/Ansible-Collections
