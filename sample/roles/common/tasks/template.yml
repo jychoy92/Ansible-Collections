@@ -8,7 +8,7 @@
 - name: print the template output
   shell: "cat {{ output_template.path }}"
   register: output_template2
+  changed_when: false
 
 - debug:
-    msg: output_template2.stdout
-
+    msg: "{{ output_template2.stdout }}"
