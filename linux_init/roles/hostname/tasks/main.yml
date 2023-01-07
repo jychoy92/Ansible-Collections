@@ -2,3 +2,5 @@
 - name: Set Hostname 
   hostname:
     name: "{{ inventory_hostname }}"
+  tags:
+    - module-hostname

@@ -1,17 +1,29 @@
 ---
 # tasks file for common
 # https://www.redhat.com/sysadmin/ansible-tags-fast-playbook-runs
-- include_tasks: 
-    file: copy.yml
-    apply:
-      tags:
-        - tag-copy
+
+- import_tasks: copy.yml
   tags:
-    - always
+    - module-copy
+
 - import_tasks: template.yml
   tags:
-    - tag-template
-- include_tasks: ansible_facts.yml
-- include_tasks: block_register_degug.yml
-- include_tasks: withitems.yml
-- include_tasks: set_fact.yml
+    - module-template
+
+- import_tasks: ansible_facts.yml
+  tags:
+    - module-ansible_facts
+
+- import_tasks: block_register_degug.yml
+  tags:
+    - module-block
+    - module-register
+    - module-degug
+
+- import_tasks: withitems.yml
+  tags:
+    - module-withitems
+
+- import_tasks: set_fact.yml
+  tags:
+    - module-set_fact
