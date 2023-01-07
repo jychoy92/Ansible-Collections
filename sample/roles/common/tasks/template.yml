@@ -5,7 +5,7 @@
     dest: "{{ ansible_env.HOME }}/ansible-results/hostinfo.txt"
   register: output_template_module
 
-- name: capture template the template output
+- name: capture template output
   shell: "cat {{ output_template_module.path }}"
   register: output_template_info
   changed_when: false
