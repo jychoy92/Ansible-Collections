@@ -1,7 +1,7 @@
 ---
 - name: "Create Ansible Serive Account Group - {{ item.group }}"
   group:
-    name: "{{ ansible_service_account.group }}"
+    name: "{{ item.group }}"
     state: present
   with_items: "{{ ansible_service_account }}"
 
