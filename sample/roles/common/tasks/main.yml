@@ -2,7 +2,9 @@
 # tasks file for common
 - include_tasks: 
     file: copy.yml
-  tags: tag-copy
+    apply:
+      tags:
+        - tag-copy
 - include_tasks: template.yml
 - include_tasks: ansible_facts.yml
 - include_tasks: block_register_degug.yml
