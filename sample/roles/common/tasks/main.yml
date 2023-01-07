@@ -1,7 +1,7 @@
 ---
 # tasks file for common
 - include_tasks: 
-    name: copy.yml
+    file: copy.yml
   tags: tag-copy
 - include_tasks: template.yml
 - include_tasks: ansible_facts.yml
