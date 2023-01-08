@@ -1,4 +1,5 @@
 ---
 ansible_service_account:
   - { name: awx, group: g_awx, state: present }
-  - { name: jychoy, group: g_awx, state: absent }
+  - { name: jychoy2, group: g_awx2, state: present }
+  - { name: jychoy3, group: g_awx2, state: absent }
