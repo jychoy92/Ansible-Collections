@@ -27,6 +27,7 @@
   file:
     path: "/home/{{ item.group }}/{{ item.name }}"
     mode: 'g-w,o-rwx'
+    state: "{{ item.state}}"
   with_items: "{{ ansible_service_account }}"
 
 
