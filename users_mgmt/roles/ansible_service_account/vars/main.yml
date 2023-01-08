@@ -1,3 +1,5 @@
 ---
 ansible_service_account:
   - { name: awx, group: g_awx }
+  - { name: awx2, group: g_awx2 }
+  - { name: awx3, group: g_awx3 }
