@@ -20,6 +20,7 @@
     home: "/home/{{ item.group }}/{{ item.name }}"
     shell: /bin/bash
     group: "{{ item.group }}"
+    state: "{{ item.state}}"
   with_items: "{{ ansible_service_account }}"
 
 - name: Modify Ansible Service Account Home Folder Permission
@@ -29,10 +30,11 @@
   with_items: "{{ ansible_service_account }}"
 
 
-- name: Include Ansible Service Account(s) sudoer Access
+- name: Include Ansible Service Account(s) group sudoer Access
   lineinfile:
     path: "/etc/sudoers.d/{{ item.group }}"
-    line: '{{ item.name }} ALL=(ALL) NOPASSWD: ALL'
+    regexp: '^%{{ item.group }}'
+    line: '%{{ item.group }} ALL=(ALL) NOPASSWD: ALL'
     state: present
     mode: 0440
     create: yes
