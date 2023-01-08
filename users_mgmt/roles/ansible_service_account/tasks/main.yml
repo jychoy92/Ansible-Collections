@@ -28,6 +28,7 @@
     path: "/home/{{ item.group }}/{{ item.name }}"
     mode: 'g-w,o-rwx'
     state: "{{ item.state}}"
+  when: "{{ item.state }} == 'present'"
   with_items: "{{ ansible_service_account }}"
 
 
