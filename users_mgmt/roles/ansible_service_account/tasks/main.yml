@@ -20,15 +20,12 @@
     home: "/home/{{ item.group }}/{{ item.name }}"
     shell: /bin/bash
     group: "{{ item.group }}"
-    state: "{{ item.state}}"
   with_items: "{{ ansible_service_account }}"
 
 - name: Modify Ansible Service Account Home Folder Permission
   file:
     path: "/home/{{ item.group }}/{{ item.name }}"
     mode: 'g-w,o-rwx'
-    state: "{{ item.state}}"
-  when: "{{ item.state }} == 'present'"
   with_items: "{{ ansible_service_account }}"
 
 
